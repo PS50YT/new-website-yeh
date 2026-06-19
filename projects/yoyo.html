@@ -144,11 +144,15 @@
 </div>
         
         <br>
-  <div style="padding: 20px; flex-wrap: wrap;">
+  <div style="padding: 20px;  flex-shrink: 1;    /* Allows the item to shrink if needed */
+  min-width: 0;      /* Prevents text from forcing the item too wide */
+  word-break: break-all; /* Stops long words from pushing outside */">
 
     <!-- Inside here, projects-->
 
-    <div style="display: flex; width:100%;">
+    <div style="display: flex;  flex-wrap: wrap;   /* Crucial: allows items to move to line 2 */
+  width: 100%;       /* Or use max-width: 100% so it fits the screen */
+  overflow: hidden; ">
 
          <div class="card" style="background-color: #ffffff; color: white; margin: 0%;">
             <h2><img src="https://media.forgecdn.net/avatars/thumbnails/1762/741/256/256/639121125891737375.jpeg" height="80px" width="80px">
@@ -164,7 +168,9 @@
 
 <!-- Next project --><br><h1>   ttt  </h1><br><br>
 
-        <div style="display: flex; width:100%;">
+        <div style="display: flex;  flex-wrap: wrap;   /* Crucial: allows items to move to line 2 */
+  width: 100%;       /* Or use max-width: 100% so it fits the screen */
+  overflow: hidden; ">
 
          <div class="card" style="background-color: #ffffff; color: white; margin: 0%;">
             <h2><img src="https://media.forgecdn.net/avatars/thumbnails/1762/741/256/256/639121125891737375.jpeg" height="80px" width="80px">
