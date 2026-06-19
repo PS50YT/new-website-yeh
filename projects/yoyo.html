@@ -6,6 +6,29 @@
     <title>Projects - ArnavMC</title>
     <style>
         
+        .topnav {
+  overflow: hidden;
+  background-color: #5E19B2;
+}
+
+.topnav a {
+  float: left;
+  color: #ffffff;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
+}
+
+.topnav a:hover {
+  background-color: #5E19B2;
+  color: rgb(255, 255, 255);
+}
+
+.topnav a.active {
+  background-color: #5E19B2;
+  color: white;
+}
 
         .card { border: 1px solid #e1e1e1; padding: 1rem; border-radius: 8px; max-width: 100%; }
 		
@@ -21,7 +44,7 @@
             justify-content: center;
             align-items: center;
             min-height: 100vh;
-            padding: 20px;
+            margin: 0%;
         }
 
         /* Outer container resembling the website's content card */
@@ -109,91 +132,18 @@
         .dde {
             color: #5E19B2;
         }
-
-
-        /* Reset basic browser margins */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: sans-serif;
-}
-
-/* Style the topbar container */
-.topbar {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    background-color: #333;
-    padding: 15px 30px;
-    position: fixed; /* Keeps the bar stuck to the top */
-    top: 0;
-    width: 100%;
-    z-index: 1000;
-}
-
-/* Brand logo formatting */
-.logo a {
-    color: #fff;
-    font-size: 24px;
-    font-weight: bold;
-    text-decoration: none;
-}
-
-/* Convert the unordered list to a horizontal layout */
-.nav-menu ul {
-    display: flex;
-    list-style: none;
-}
-
-/* Add spacing between links */
-.nav-menu li {
-    margin-left: 20px;
-}
-
-/* Individual navigation link styles */
-.nav-menu a {
-    color: #f2f2f2;
-    text-decoration: none;
-    font-size: 16px;
-    padding: 8px 12px;
-    transition: 0.3s;
-}
-
-/* Hover and active link highlights */
-.nav-menu a:hover, 
-.nav-menu a.active {
-    background-color: #555;
-    border-radius: 4px;
-    color: #fff;
-}
-
-/* Prevent your body content from hiding behind the fixed header */
-body {
-    padding-top: 70px; 
-        padding-left: 260px;   
-}
-
     </style>
 </head>
 <body>
-       <header class="topbar">
-        <div class="logo">
-            <a href="#">MyBrand</a>
-        </div>
+    	<div class="topnav">
+  <a class="active" href="#home">Home</a>
+  <a href="#news">News</a>
+  <a href="#contact">Contact</a>
+  <a href="#about">About</a>
+</div>
         
-        <!-- Navigation menu container -->
-        <nav class="nav-menu">
-            <ul>
-                <li><a href="#" class="active">Home</a></li>
-                <li><a href="#">About</a></li>
-                <li><a href="#">Services</a></li>
-                <li><a href="#">Contact</a></li>
-            </ul>
-        </nav>
-    </header>
         <br>
-  
+  <div style="padding: 20px;">
     <div style="display: flex; width:100%;">
 
          <div class="card" style="background-color: #ffffff; color: white; margin: 0%;">
@@ -207,6 +157,11 @@ body {
             <p>&#x1F5DE; Patti HUD is a minimal client-side  mod for Minecraft It adds a clean mod menu, customizable HUDs, Zoom, Fullbright, and other useful utilities.</p>
         </div>
         </div>
+
+    </div>
+
+
+
 
     </div>
 
