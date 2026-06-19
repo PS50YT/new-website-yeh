@@ -111,52 +111,86 @@
         }
 
 
-
-        /* 1. Reset browser defaults */
+        /* Reset basic browser margins */
 * {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: sans-serif;
 }
 
-/* 2. Style the topbar container */
+/* Style the topbar container */
 .topbar {
-  background-color: #333;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #333;
+    padding: 15px 30px;
+    position: fixed; /* Keeps the bar stuck to the top */
+    top: 0;
+    width: 100%;
+    z-index: 1000;
 }
 
-/* 3. Style the navigation tabs */
-.nav-tab {
-  /* Crucial: This makes the 30px spacing work */
-  display: inline-block; 
-  
-  /* Apply your 30px spacing */
-  padding: 30px;
-  margin: 30px;
-  
-  /* Make it look like a nice tab */
-  color: white;
-  text-decoration: none;
-  background-color: #555;
-  border-radius: 5px;
+/* Brand logo formatting */
+.logo a {
+    color: #fff;
+    font-size: 24px;
+    font-weight: bold;
+    text-decoration: none;
 }
 
-/* 4. Add a hover effect */
-.nav-tab:hover {
-  background-color: #007bff;
+/* Convert the unordered list to a horizontal layout */
+.nav-menu ul {
+    display: flex;
+    list-style: none;
+}
+
+/* Add spacing between links */
+.nav-menu li {
+    margin-left: 20px;
+}
+
+/* Individual navigation link styles */
+.nav-menu a {
+    color: #f2f2f2;
+    text-decoration: none;
+    font-size: 16px;
+    padding: 8px 12px;
+    transition: 0.3s;
+}
+
+/* Hover and active link highlights */
+.nav-menu a:hover, 
+.nav-menu a.active {
+    background-color: #555;
+    border-radius: 4px;
+    color: #fff;
+}
+
+/* Prevent your body content from hiding behind the fixed header */
+body {
+    padding-top: 70px; 
 }
 
     </style>
 </head>
 <body>
-    <header class="topbar">
-  <nav>
-    <a href="#" class="nav-tab">Home</a>
-    <a href="#" class="nav-tab">About</a>
-    <a href="#" class="nav-tab">Services</a>
-    <a href="#" class="nav-tab">Contact</a>
-  </nav>
-</header>
-
+       <header class="topbar">
+        <div class="logo">
+            <a href="#">MyBrand</a>
+        </div>
+        
+        <!-- Navigation menu container -->
+        <nav class="nav-menu">
+            <ul>
+                <li><a href="#" class="active">Home</a></li>
+                <li><a href="#">About</a></li>
+                <li><a href="#">Services</a></li>
+                <li><a href="#">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
         <br>
   
     <div style="display: flex; width:100%;">
