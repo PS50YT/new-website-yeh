@@ -1,0 +1,553 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ArnavMC - Minecraft Projects</title>
+  <link rel="icon" type="image/x-icon" href="https://raw.githubusercontent.com/PS50YT/new-website-yeh/refs/heads/main/assets/638813620733409836.png">
+
+  <style>
+    /* =========================
+       BASIC SETTINGS
+    ========================= */
+    :root {
+      --purple: #5E19B2;
+      --purple-light: #f1e8ff;
+      --text: #222;
+      --muted: #777;
+      --background: #fafafa;
+      --white: #fff;
+      --border: #e9e9e9;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      color: var(--text);
+      background: var(--background);
+      line-height: 1.5;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    /* =========================
+       HEADER
+    ========================= */
+    header {
+      background: var(--white);
+      border-bottom: 1px solid var(--border);
+    }
+
+    .nav {
+      max-width: 1100px;
+      margin: auto;
+      padding: 18px 20px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .logo {
+      color: var(--purple);
+      font-size: 22px;
+      font-weight: 800;
+    }
+
+    nav a {
+      margin-left: 25px;
+      color: #555;
+      font-size: 14px;
+      font-weight: 600;
+    }
+
+    nav a:hover {
+      color: var(--purple);
+    }
+
+    /* =========================
+       HERO
+    ========================= */
+    .hero {
+      max-width: 1100px;
+      margin: auto;
+      padding: 65px 20px 45px;
+    }
+
+    .hero span {
+      color: var(--purple);
+      font-weight: bold;
+      font-size: 14px;
+    }
+
+    .hero h1 {
+      font-size: clamp(36px, 6vw, 60px);
+      line-height: 1.05;
+      margin: 8px 0 15px;
+    }
+
+    .hero p {
+      max-width: 600px;
+      color: var(--muted);
+      font-size: 17px;
+    }
+
+    /* =========================
+       MODS
+    ========================= */
+    .mods {
+      max-width: 1100px;
+      margin: auto;
+      padding: 10px 20px 70px;
+    }
+
+    .mods-title {
+      margin-bottom: 20px;
+      font-size: 24px;
+    }
+
+    .mod-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 16px;
+    }
+
+    .mod-card {
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      padding: 18px;
+      display: flex;
+      gap: 18px;
+      align-items: center;
+      transition: 0.2s ease;
+    }
+
+    .mod-card:hover {
+      border-color: var(--purple);
+      transform: translateY(-3px);
+      box-shadow: 0 10px 30px rgba(94, 25, 178, 0.10);
+    }
+
+    .mod-logo {
+      width: 80px;
+      height: 80px;
+      flex-shrink: 0;
+      border-radius: 12px;
+      object-fit: cover;
+      background: var(--purple-light);
+    }
+
+    .mod-info {
+      flex: 1;
+    }
+
+    .mod-info h3 {
+      font-size: 19px;
+      margin-bottom: 4px;
+    }
+
+    .mod-info p {
+      color: var(--muted);
+      font-size: 14px;
+      margin-bottom: 10px;
+    }
+
+    .tag {
+      display: inline-block;
+      padding: 4px 9px;
+      border-radius: 20px;
+      background: var(--purple-light);
+      color: var(--purple);
+      font-size: 11px;
+      font-weight: bold;
+    }
+
+    .view {
+      color: var(--purple);
+      font-size: 13px;
+      font-weight: bold;
+    }
+
+    /* =========================
+       FOOTER
+    ========================= */
+    footer {
+      border-top: 1px solid var(--border);
+      background: white;
+      text-align: center;
+      padding: 25px 20px;
+      color: var(--muted);
+      font-size: 13px;
+    }
+
+    /* =========================
+       MOBILE
+    ========================= */
+    @media (max-width: 700px) {
+      .nav {
+        flex-direction: column;
+        gap: 12px;
+      }
+
+      nav a {
+        margin: 0 8px;
+      }
+
+      .hero {
+        padding-top: 45px;
+      }
+
+      .mod-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .mod-card {
+        padding: 14px;
+      }
+
+      .mod-logo {
+        width: 65px;
+        height: 65px;
+      }
+    }
+
+    .archive{
+      font-size: small;
+      background-color: #ffc107;
+      border-radius: 2px;
+      padding: 2px;
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- =========================
+       HEADER
+  ========================== -->
+  <header>
+    <div class="nav">
+      <a href="#" class="logo">ArnavMC</a>
+
+      <nav>
+        <a href="https://modrinth.com/user/ArnavMC-Modrinth"><img src="https://raw.githubusercontent.com/PS50YT/new-website-yeh/refs/heads/main/assets/modrinth-thw2jri326n9rjnew2o79.webp" height="30px" width="30px"></a>
+        <a href="https://www.curseforge.com/members/ArnavMC/projects"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAJQAAACUCAMAAABC4vDmAAAAaVBMVEX///8AAAA1NTX4+PiPj49dXV2ZmZmCgoL19fXr6+vk5OTW1tb8/Pzx8fHIyMjo6Og6OjoPDw9NTU0lJSXQ0NBtbW22traJiYksLCyrq6vd3d1YWFhERERSUlIVFRW/v7+hoaF2dnYcHBxOYTkDAAADeElEQVR4nO2b25qiMAyAQTlWQAXKWUHf/yFn2HFmUamkR7jIfzvf7vybtiFJu5aFIAiCIAiCIAiCIMhWKbOddirKKRW4tn5c3lCFuw1KWXm1QSnrsEUpq96ilOVtUSq6bVDKCugGpTQnBkEpvYnBtfYcBP+tdCaG+4nnozSNq/bEAKWfrqDuxACkDaZSkd4jCKV53uzO2j4jnrU9qSHantRrnLYg9Ran9aXafCarryzlxDNO60q1zZzSqlJVEsw7rSdFkz1DaS2pjObvZ25dKVqzg7SOVFo3C0qGpTq/PywJjZSmhHZu3YQQo2967w9/pO2ys2qfijrFgXX8IQTxkZC8duilypQYndshXNxEYEKSeP5JUinzQJuIj5jUVLwTqwboLuIXKwRPw3DUpfTw6riVWg0L90JQc24vT+a4gTn6HEpX/WF6MICdOmNO8Ib6zCje9HCDORUmnSwrhUj5Zp2sAiKlNz29s78sO5WGnUClTr/8tyhmef12Ro/eP5LFautENijlfupT1pJKZztxrfSLe6oyv6eWv3/nxLTTHnB/6ZiWIstOdmpaCjRMNrx+Iaj85L3TlgRYfBr90DQwJ6O7Kga3NAYPIHxCczdWe3JdeRkq9HKugYerrWGfQjiHMCa+ywTUMky5qRsAMYBlzRcrzY17wx2nEb37inc//dJqjFUhPGh0tWUGmSv5bu7mTJ79TcLpGx25nUg/lfOUp4ZewVDdVdtJxDzDuw+orK9yZc+GqKqMFTsK70M6NcECFwXXrEpTSm++75cl+1ioCBbkEcyZlk6RHAgJ42gcIESJ/2F8pSA3hJ8efF0rt6xJ8HTWj717/fhPuMhLfZgZUCcnrx+1w7BYRpzlR0Tz9fg1dZL34i1KQD2q9PpFc41L5x1mysmgBiZ96aHx++p1zuy3NfbAyWwnu36vEx9azBYhe4/ndktyxhA9V5qUUYDUgAH2BMn1I9NkznptAdveEzI5qUldx4rSUeDho9z6/cWAeb0p9JpW6i6iefzGivUoJRC7Vb7INKiPa4Ub6wwnQh2XLbd+/k+YGD+N4DekrwziTsGYDymrOzpKVO2duNT4+NpjLb9Ys/yLeB9Y2hXz49nfZZxs1pZYJLpkzMty8e30AxW9TUo6ZpBlnWxb9G1AzvyDRSX7/8bMDUMRBEEQBEEQBEEQBFHFFwJzOTpxOt9HAAAAAElFTkSuQmCC" height="30px" width="30px"></a>
+        <a href="https://www.youtube.com/@its-ArnavMC"><img src="https://raw.githubusercontent.com/PS50YT/new-website-yeh/refs/heads/main/assets/icons8-youtube-50.png" height="30px" width="30px"></a>
+        <a href="https://github.com/PS50YT"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAMAAABEpIrGAAAAb1BMVEX////4+Pi3ubtvcnZNUVU+Q0cpLjLr6+x3en0sMTYkKS59gIORk5aUl5n8/Pzw8PFTV1tbX2Pc3d5DSEzn5+g3PECLjpFKTlKFh4qxs7XCxMUuMze/wcLh4uPV1tZzd3o/Q0jOz9CmqKpjZ2qfoaTxAyfNAAABPUlEQVR4AW3TBYKDMBQE0AltAgzuzur9z7ibH5oKfWjc4UEFl6s2Rl8vgcJZGMX04iTEM5UaPomzHA+KkidVAa/WfKNpffMd32oKCHUlWfb27Q19ZSMVrNHGTMDckMtQLqSegdXGpvi3Sf93W9UudRby2WzsEgL4oMvwoqY1AsrQNfFipbXkCGh1BV6oT1pfRwvfOJlo9ZA5NAonStbmB1pawBuDTAgkX4MzV/eC2H3e0C7lk1aBEzd+7SpigJOZVoXx+J5UxzADil+8+KZYoRaK5y2WZxSdgm0j+dakzkIc2kzT6W3IcFnDTzdt4sKbWMqkpNl229IMsfMmg6UaMsJXmv4qCMXDoI4mO5oADwyFDnGoO3KI0jSHQ6E3eJum5TP4Y+EVyUOGXHZjgWd7ZEwOJzZRjbPQt7mF8P4AzsYZpmkFLF4AAAAASUVORK5CYII=" height="30px" width="30px"></a>
+      </nav>
+    </div>
+  </header>
+
+
+  <!-- =========================
+       HERO
+  ========================== -->
+  <section class="hero" style="background-image: url(https://raw.githubusercontent.com/PS50YT/new-website-yeh/refs/heads/main/assets/custom-ava.png); background-size: contain; background-position: right; background-repeat: no-repeat;">
+    <span>ARNAVMC'S OFFICIAL WEBSITE</span>
+
+    <h1>Find My All<br>Mods, RP & Maps</h1>
+
+    <p>
+      Explore my collection of all Minecraft mods, addons, Texture Packs and Maps made by me.
+    </p>
+  </section>
+
+
+  <!-- =========================
+       MOD LIST
+       
+       TO ADD A MOD:
+       1. Copy one .mod-card
+       2. Change the image
+       3. Change the name
+       4. Change the description
+       5. Change the link
+  ========================== -->
+  <main class="mods" id="mods">
+
+    <h2 class="mods-title">Minecraft Projects</h2>
+
+    <div class="mod-grid">
+
+      <!-- MOD 1 -->
+      <a href="https://www.curseforge.com/minecraft/mc-mods/patti-client" class="mod-card">
+        <img
+          src="https://media.forgecdn.net/avatars/thumbnails/1762/741/256/256/639121125891737375.jpeg"
+          alt="Mod 1 Logo"
+          class="mod-logo"
+        >
+
+        <div class="mod-info">
+          <h3>Patti Client</h3>
+          <p>It is a utility and performance Minecraft client</p>
+        </div>
+
+        <span class="view">View →</span>
+      </a>
+
+
+      <!-- MOD 2 -->
+      <a href="https://www.curseforge.com/minecraft/mc-mods/sinytra-connector-crash-fix" class="mod-card">
+        <img
+          src="https://media.forgecdn.net/avatars/thumbnails/1858/658/256/256/639167723813856200.jpg"
+          alt="Mod 2 Logo"
+          class="mod-logo"
+        >
+
+        <div class="mod-info">
+          <h3>Sinytra Connector Crash Fix</h3>
+          <p>Fixes crash in Sinytra Connector</p>
+        </div>
+
+        <span class="view">View →</span>
+      </a>
+
+
+      <!-- MOD 3 -->
+      <a href="https://www.curseforge.com/minecraft/modpacks/arnavmcs-creator-pack" class="mod-card">
+        <img
+          src="https://media.forgecdn.net/avatars/thumbnails/1954/685/256/256/639210927441877937.png"
+          alt="Mod 3 Logo"
+          class="mod-logo"
+        >
+
+        <div class="mod-info">
+          <h3>ArnavMC's Creator Pack</h3>
+          <p>Essential modpack for Minecraft roleplaying-contents like creator</p>
+        </div>
+
+        <span class="view">View →</span>
+      </a>
+
+
+      <!-- MOD 4 -->
+      <a href="https://www.curseforge.com/minecraft/mc-mods/ultimate-brightness" class="mod-card">
+        <img
+          src="https://media.forgecdn.net/avatars/thumbnails/1971/290/256/256/639217769655828490.jpg"
+          alt="Mod 4 Logo"
+          class="mod-logo"
+        >
+
+        <div class="mod-info">
+          <h3>Ultimate Brightness</h3>
+          <p>Makes Minecraft brighter!!! A full brightness mod.</p>
+        </div>
+
+        <span class="view">View →</span>
+      </a>
+
+       <!-- MOD 5 -->
+      <a href="https://www.curseforge.com/minecraft-bedrock/addons/red-verity-pe-be" class="mod-card">
+        <img
+          src="https://media.forgecdn.net/avatars/thumbnails/1971/310/256/256/639217785067882902.jpg"
+          alt="Mod 4 Logo"
+          class="mod-logo"
+        >
+
+        <div class="mod-info">
+          <h3>Red Verity PE/BE</h3>
+          <p>Red Verity viral videos now being available on reality. Horror</p>
+        </div>
+
+        <span class="view">View →</span>
+      </a>
+      <!-- MOD 6 -->
+      <a href="https://www.curseforge.com/minecraft/mc-mods/kiteium" class="mod-card">
+        <img
+          src="https://media.forgecdn.net/avatars/thumbnails/1843/637/256/256/639160779304020917.png"
+          alt="Mod 1 Logo"
+          class="mod-logo"
+        >
+
+        <div class="mod-info">
+          <h3>Kiteium <span class="archive">Archived</span></h3>
+          <p>Unofficial port of Starlight works 11.2% better and also makes available for newer versions.</p>
+        </div>
+
+        <span class="view">View →</span>
+      </a>
+
+
+      <!-- MOD 7 -->
+      <a href="https://www.curseforge.com/minecraft/mc-mods/il-foods-gardens" class="mod-card">
+        <img
+          src="https://media.forgecdn.net/avatars/thumbnails/1862/875/256/256/639169589354517174.png"
+          alt="Mod 2 Logo"
+          class="mod-logo"
+        >
+
+        <div class="mod-info">
+          <h3>i'l Foods & Gardens</h3>
+          <p>Adds 15+ real-life food items and 3+ garden-based items to Minecraft. Also regional foods!</p>
+        </div>
+
+        <span class="view">View →</span>
+      </a>
+
+
+      <!-- MOD 8 -->
+      <a href="https://www.curseforge.com/minecraft-bedrock/addons/realism-vehicle-be-pe" class="mod-card">
+        <img
+          src="https://media.forgecdn.net/avatars/thumbnails/1866/422/256/256/639171090917185692.webp"
+          alt="Mod 3 Logo"
+          class="mod-logo"
+        >
+
+        <div class="mod-info">
+          <h3>Realism Vehicle Be/Pe</h3>
+          <p>A light-weighted add-on for adding vehicle in Minecraft Bedrock</p>
+        </div>
+
+        <span class="view">View →</span>
+      </a>
+
+
+      <!-- MOD 9 -->
+      <a href="https://www.curseforge.com/minecraft/texture-packs/old-modernize-texture-pack" class="mod-card">
+        <img
+          src="https://media.forgecdn.net/attachments/1709/140/pack-png.png"
+          alt="Mod 4 Logo"
+          class="mod-logo"
+        >
+
+        <div class="mod-info">
+          <h3>Old-Modernize Texture Pack</h3>
+          <p>Changes old Minecraft textures into newer MInecraft Textures</p>
+        </div>
+
+        <span class="view">View →</span>
+      </a>
+
+       <!-- MOD 10 -->
+      <a href="#" class="mod-card">
+        <img
+          src="https://media.forgecdn.net/avatars/thumbnails/1838/177/256/256/639158672236533372.webp"
+          alt="Mod 4 Logo"
+          class="mod-logo"
+        >
+
+        <div class="mod-info">
+          <h3>Enderman into Slenderman</h3>
+          <p>This Texture Pack replaces the EnderMan Texture with Slenderman!&#x1F47B;</p>
+        </div>
+
+        <span class="view">View →</span>
+      </a>
+      <!-- MOD 11 -->
+      <a href="#" class="mod-card">
+        <img
+          src="https://mcpeaddons.com/wp-content/uploads/2023/03/Coastal-Plains-1.jpg"
+          alt="Mod 3 Logo"
+          class="mod-logo"
+        >
+
+        <div class="mod-info">
+          <h3>Coastal Plains, India</h3>
+          <p>A map based on India's coastal regions</p>
+        </div>
+
+        <span class="view">View →</span>
+      </a>
+
+
+      <!-- MOD 12 -->
+      <a href="https://www.planetminecraft.com/texture-pack/ps50yt-rtx-v2-no-ray-tracing-needed-can-run-on-low-end-device/" class="mod-card">
+        <img
+          src="https://raw.githubusercontent.com/PS50YT/PS50YT-Rtx/refs/heads/main/rtx2.jpg"
+          alt="Mod 4 Logo"
+          class="mod-logo"
+        >
+
+        <div class="mod-info">
+          <h3>PS50YT RTX <span class="archive">Discontinued</span></h3>
+          <p>A MCPE shader for low-end devices to feel realism</p>
+        </div>
+
+        <span class="view">View →</span>
+      </a>
+
+       <!-- MOD 13 -->
+      <a href="https://www.planetminecraft.com/texture-pack/ps50yt-city-texture-pack/" class="mod-card">
+        <img
+          src="https://raw.githubusercontent.com/PS50YT/new-website-yeh/refs/heads/main/assets/18184723-inshot_l.webp"
+          alt="Mod 4 Logo"
+          class="mod-logo"
+        >
+
+        <div class="mod-info">
+          <h3>PS50YT City Texture Pack <span class="archive">Discontinued</span></h3>
+          <p>A texture pack for MCPE to feel the vides of cities</p>
+        </div>
+
+        <span class="view">View →</span>
+      </a>
+      <!-- MOD 14 -->
+      <a href="#" class="mod-card">
+        <img
+          src="https://raw.githubusercontent.com/PS50YT/new-website-yeh/refs/heads/main/assets/Screenshot%202026-08-15%20145037.png"
+          alt="Mod 3 Logo"
+          class="mod-logo"
+        >
+
+        <div class="mod-info">
+          <h3>Indian Cities & Villages</h3>
+          <p>Indian cities and villages built in Minecraft</p>
+        </div>
+
+        <span class="view">View →</span>
+      </a>
+
+
+      <!-- MOD 15 -->
+      <a href="https://www.planetminecraft.com/project/choo-choo-charles-v1-mcpe/" class="mod-card">
+        <img
+          src="https://raw.githubusercontent.com/PS50YT/new-website-yeh/refs/heads/main/assets/17424726-choo-choo-charles-v_l.webp"
+          alt="Mod 4 Logo"
+          class="mod-logo"
+        >
+
+        <div class="mod-info">
+          <h3>Choo Choo Charles MCPE <span class="archive">Discontinued</span></h3>
+          <p>Choo Choo Charles in Minecraft! Minecraft survival map</p>
+        </div>
+
+        <span class="view">View →</span>
+      </a>
+
+       <!-- MOD 16 -->
+      <a href="https://www.planetminecraft.com/texture-pack/sheep-shader-mcpe/" class="mod-card">
+        <img
+          src="https://raw.githubusercontent.com/PS50YT/new-website-yeh/refs/heads/main/assets/17408892-sheep-shader_l.webp"
+          alt="Mod 4 Logo"
+          class="mod-logo"
+        >
+
+        <div class="mod-info">
+          <h3>Sheep Shader <span class="archive">Discontinued</span></h3>
+          <p>A shader for MCPE especially for low-end devices.</p>
+        </div>
+
+        <span class="view">View →</span>
+      </a>
+
+    </div>
+  </main>
+
+
+  <!-- =========================
+       FOOTER
+  ========================== -->
+  <footer id="about">
+    Thanks for seeing my Minecraft Projects. A lot of thanks by me :)
+  </footer>
+
+</body>
+</html>
