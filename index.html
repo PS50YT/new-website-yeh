@@ -9,6 +9,117 @@
 
   <style>
     /* =========================
+       GITHUB REPO
+    ========================= */
+    #repos {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 24px;
+        }
+
+        .repo {
+          margin-left: 40px;
+            background: white;
+            border: 1px solid #e5e5e5;
+            border-radius: 22px;
+            padding: 27px;
+            display: flex;
+            align-items: center;
+            gap: 26px;
+            min-height: 120px;
+            transition: 0.2s;
+        }
+
+        .repo:hover {
+            border-color: #8b24ff;
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px #0000000d;
+        }
+
+        .repo img {
+            width: 120px;
+            height: 120px;
+            object-fit: cover;
+            border-radius: 17px;
+        }
+
+        .info {
+            flex: 1;
+            min-width: 0;
+        }
+
+        .info h2 {
+            font-size: 27px;
+            margin: 0 0 12px;
+        }
+
+        .info p {
+            color: #777;
+            font-size: 19px;
+            line-height: 1.5;
+            margin: 0;
+        }
+
+        .view {
+            color: #7200d9;
+            font-size: 20px;
+            font-weight: bold;
+            text-decoration: none;
+            white-space: nowrap;
+        }
+
+        .view:hover {
+            color: #a000ff;
+        }
+
+        .badge {
+            background: #ffbf00;
+            color: black;
+            padding: 4px 7px;
+            border-radius: 4px;
+            font-size: 15px;
+            vertical-align: middle;
+        }
+
+        #status {
+            color: #777;
+            margin-bottom: 20px;
+        }
+
+        @media (max-width: 850px) {
+            #repos {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 500px) {
+            body {
+                padding: 15px;
+            }
+
+            .repo {
+                padding: 16px;
+                gap: 14px;
+            }
+
+            .repo img {
+                width: 75px;
+                height: 75px;
+            }
+
+            .info h2 {
+                font-size: 18px;
+            }
+
+            .info p {
+                font-size: 14px;
+            }
+
+            .view {
+                font-size: 15px;
+            }
+        }
+    /* =========================
        BASIC SETTINGS
     ========================= */
     :root {
@@ -226,6 +337,116 @@
       border-radius: 2px;
       padding: 2px;
     }
+
+    /* GitHub cards: deliberately match the Minecraft project cards */
+    .github-section {
+      max-width: 1100px;
+      margin: auto;
+      padding: 10px 20px 70px;
+    }
+
+    .github-section h2 {
+      margin-bottom: 20px;
+      font-size: 24px;
+    }
+
+    .github-status {
+      color: var(--muted);
+      margin: 0 0 16px;
+      font-size: 14px;
+    }
+
+    .github-repo-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 16px;
+    }
+
+    .github-repo-card {
+      min-width: 0;
+      min-height: 0;
+      padding: 18px;
+      display: flex;
+      align-items: center;
+      gap: 18px;
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      transition: 0.2s ease;
+    }
+
+    .github-repo-card:hover {
+      border-color: var(--purple);
+      transform: translateY(-3px);
+      box-shadow: 0 10px 30px rgba(94, 25, 178, 0.10);
+    }
+
+    .github-repo-logo {
+      width: 80px;
+      height: 80px;
+      flex: 0 0 80px;
+      object-fit: cover;
+      border-radius: 12px;
+      background: var(--purple-light);
+    }
+
+    .github-repo-info {
+      flex: 1;
+      min-width: 0;
+    }
+
+    .github-repo-info h3 {
+      margin: 0 0 4px;
+      font-size: 19px;
+      line-height: 1.3;
+      overflow-wrap: anywhere;
+    }
+
+    .github-repo-info p {
+      margin: 0;
+      color: var(--muted);
+      font-size: 14px;
+      line-height: 1.5;
+    }
+
+    .github-repo-view {
+      flex: 0 0 auto;
+      color: var(--purple);
+      font-size: 13px;
+      font-weight: bold;
+      white-space: nowrap;
+    }
+
+    .github-repo-view:hover {
+      color: #a000ff;
+    }
+
+    .github-archive {
+      display: inline-block;
+      padding: 2px 6px;
+      border-radius: 3px;
+      background: #ffc107;
+      color: #222;
+      font-size: 11px;
+      vertical-align: middle;
+    }
+
+    @media (max-width: 700px) {
+      .github-repo-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .github-repo-card {
+        padding: 14px;
+      }
+
+      .github-repo-logo {
+        width: 65px;
+        height: 65px;
+        flex-basis: 65px;
+      }
+    }
+
   </style>
 </head>
 
@@ -254,13 +475,95 @@
   <section class="hero" style="background-image: url(https://raw.githubusercontent.com/PS50YT/new-website-yeh/refs/heads/main/assets/custom-ava.png); background-size: contain; background-position: right; background-repeat: no-repeat;">
     <span>ARNAVMC'S OFFICIAL WEBSITE</span>
 
-    <h1>Find My All<br>Mods, RP & Maps</h1>
+    <h1>Find My All<br>Projects here</h1>
 
     <p>
       Explore my collection of all Minecraft mods, addons, Texture Packs and Maps made by me.
     </p>
   </section>
 
+<!-- =========================
+       GITHUB REPOSITORIES
+  ========================== -->
+  <section class="github-section">
+    <h2>GitHub Repositories</h2>
+    <p class="github-status" id="github-status">Loading repositories...</p>
+    <div class="github-repo-grid" id="github-repo-grid"></div>
+  </section>
+
+  <script>
+    async function loadGithubRepos() {
+      const username = "PS50YT";
+      const container = document.getElementById("github-repo-grid");
+      const status = document.getElementById("github-status");
+
+      try {
+        let repos = [];
+        let page = 1;
+        let data;
+
+        do {
+          const response = await fetch(
+            `https://api.github.com/users/${username}/repos?per_page=100&page=${page}&sort=updated`
+          );
+          if (!response.ok) throw new Error("GitHub API request failed");
+
+          data = await response.json();
+          repos = repos.concat(data);
+          page++;
+        } while (data.length === 100);
+
+        status.textContent = repos.length + " public repositories";
+
+        repos.forEach(repo => {
+          const card = document.createElement("article");
+          card.className = "github-repo-card";
+
+          const img = document.createElement("img");
+          img.className = "github-repo-logo";
+          img.alt = repo.name + " preview";
+          img.loading = "lazy";
+          img.src = `https://opengraph.githubassets.com/1/${username}/${repo.name}`;
+          img.onerror = () => {
+            img.onerror = null;
+            img.src = repo.owner.avatar_url;
+          };
+
+          const info = document.createElement("div");
+          info.className = "github-repo-info";
+
+          const title = document.createElement("h3");
+          title.textContent = repo.name;
+
+          if (repo.archived) {
+            const badge = document.createElement("span");
+            badge.className = "github-archive";
+            badge.textContent = "Archived";
+            title.appendChild(document.createTextNode(" "));
+            title.appendChild(badge);
+          }
+
+          const description = document.createElement("p");
+          description.textContent = repo.description || "No description available.";
+
+          const view = document.createElement("a");
+          view.className = "github-repo-view";
+          view.href = repo.html_url;
+          view.target = "_blank";
+          view.rel = "noopener noreferrer";
+          view.textContent = "View →";
+
+          info.append(title, description);
+          card.append(img, info, view);
+          container.appendChild(card);
+        });
+      } catch (error) {
+        status.textContent = "Unable to load repositories. Please try again later.";
+      }
+    }
+
+    loadGithubRepos();
+  </script>
 
   <!-- =========================
        MOD LIST
@@ -543,10 +846,46 @@
   </main>
 
   <!-- =========================
+       EXTENSION LIST
+       
+       TO ADD A MOD:
+       1. Copy one .mod-card
+       2. Change the image
+       3. Change the name
+       4. Change the description
+       5. Change the link
+  ========================== -->
+  <main class="mods" id="mods">
+
+    <h2 class="mods-title">Chrome/Edge Extensions</h2>
+
+    <div class="mod-grid">
+
+      <!-- MOD 1 -->
+      <a href="https://veyro-os-six.vercel.app" class="mod-card">
+        <img
+          src="https://raw.githubusercontent.com/PS50YT/VeyroOS/refs/heads/main/icon.png"
+          alt="Mod 1 Logo"
+          class="mod-logo"
+        >
+
+        <div class="mod-info">
+          <h3>VeyroOS</h3>
+          <p>A Simple Home Page thinking of, how Windows 12 looks like!</p>
+        </div>
+
+        <span class="view">View →</span>
+      </a>
+
+    </div>
+  </main>
+
+
+  <!-- =========================
        FOOTER
   ========================== -->
   <footer id="about">
-    Thanks for seeing my Minecraft Projects. A lot of thanks by me :)
+    Thanks for seeing my all Projects. A lot of thanks by me :)
   </footer>
 
 </body>
